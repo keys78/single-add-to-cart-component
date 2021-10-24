@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import Cart from '../components/Cart Folder/Cart'
+import ImageLightBox from '../components/ImageLightBox'
 import NavBar from '../components/NavCenter/NavBar'
 
 const Home = () => {
     return (
         <HomeContainer>
            <NavBar />
+           <Cart />
+           <ImageLightBox />
         </HomeContainer>
     )
 }
