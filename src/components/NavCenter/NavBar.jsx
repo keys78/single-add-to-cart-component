@@ -1,8 +1,10 @@
 import React from 'react'
 import NavLinks from './NavLinks'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
 
 const NavBar = () => {
+    const dispatch = useDispatch();
     return (
         <NavBarContainer >
             <div>
@@ -10,7 +12,11 @@ const NavBar = () => {
             </div>
 
             <div className='flex -mt-10 gap-20 items-center'>
+                <div>
                 <ImgCart src='images/icon-cart.svg' />
+                </div>
+                
+
                 <Avatar src='images/AvatarMaker.png' />
             </div>
         </NavBarContainer>
