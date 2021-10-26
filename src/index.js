@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux'
 import store from './Redux/store'
+import SimpleReactLightbox from 'simple-react-lightbox'
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <SimpleReactLightbox>
+        <App />
+      </SimpleReactLightbox>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

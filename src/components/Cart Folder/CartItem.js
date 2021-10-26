@@ -1,29 +1,60 @@
 import React from 'react'
 import { products } from '../data'
-import { useDispatch } from 'react-redux'
-import { removeItemFromCart } from '../../Redux/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeItemFromCart, getTotalPrice } from '../../Redux/cartSlice'
+import styled from 'styled-components'
+
 
 const CartItem = ({ cartItem, i }) => {
     const cartProduct = products.find(p => p.id === cartItem.productId)
     const dispatch = useDispatch();
+    const totalPrice = useSelector(getTotalPrice)
 
     return (
-        <div>
-            <div key={i} className="cartItemDesc">
-                <p>{cartItem.id}</p>
-                <p>{cartProduct.name}</p>
-                <p>{cartItem.quantity}</p>
-                <p>$ {cartProduct.price * cartItem.quantity}</p>
+        <CartItemInfo>
+            <div className="flex justify-between items-center" key={i}>
+                <CartThumbNail src={cartItem.cartImage} alt="cartImage" />
+                <div>
+                    <h1 className="text-sm text-gray-500">{cartProduct.name}</h1>
+                    <span className="text-sm pr-1 text-gray-500">{'$'}{cartProduct.price}</span>
+                    <span className="text-sm pr-1 text-gray-500">x {cartItem.quantity}</span>
+                    <span className="font-bold text-sm">{'$'}{totalPrice}</span>
+                </div>
+                <div onClick={() => dispatch(removeItemFromCart({ cartItemId: cartItem.id }))}>
+                    <img src='images/icon-delete.svg' />
+                </div>
             </div>
-            <div onClick={() => dispatch(removeItemFromCart({ cartItemId: cartItem.id })) }
-                 className="border border-3 btn">
-                <span>
-                    DELETE
-                </span>
-            </div>
+            <CheckoutBtn>CHECKOUT</CheckoutBtn>
 
-        </div>
+        </CartItemInfo>
     )
 }
+
+const CartItemInfo = styled.div`
+    padding:0 13px;
+   
+`
+
+const CartThumbNail = styled.img`
+    width: 50px;
+    border-radius:7px;
+`
+const CheckoutBtn = styled.div`
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    padding:8px 0;
+    border-radius: 5px;
+    background-color: var(--orange);
+    color: var(--neutral);
+    transition: 0.5s;
+    
+    &:hover{
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.5s;
+    }
+    
+`
 
 export default CartItem

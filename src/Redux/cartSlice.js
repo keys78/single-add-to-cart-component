@@ -15,7 +15,8 @@ export const cartSlice = createSlice({
         id: newId,
         productId: action.payload.product.id,
         quantity: action.payload.quantity,
-        totalPrice: action.payload.quantity = action.payload.product.price
+        cartImage: action.payload.product.cartImage,
+        totalPrice: action.payload.quantity * action.payload.product.price
       })
       alert(action.payload.product.name + ' ' + 'added to cart')
     },
