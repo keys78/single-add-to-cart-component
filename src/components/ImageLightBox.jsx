@@ -153,7 +153,7 @@ const AddToCartBtn = styled.div`
         transition: 0.5s;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         width: 100%;
         margin-bottom: 4rem;
   }
@@ -165,7 +165,7 @@ const PanelContainer = styled.div`
     gap:9rem;
     margin-top:2rem;
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       flex-direction: column;
       gap:1rem;
   }

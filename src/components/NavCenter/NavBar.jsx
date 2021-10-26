@@ -73,7 +73,7 @@ const Avatar = styled.img`
     width: 50px;
     border: 2px solid var(--orange);
     cursor: pointer;
-    z-index: 9999999999999999;
+    z-index: 1;
     
     @media (max-width: 640px) {
         width: 30px;
@@ -108,7 +108,9 @@ const Counter = styled.span`
 
 `
 const Hamburger = styled.img`
-    
+    @media (min-width: 1024px) {
+       display: none;
+  }
 `
 
 

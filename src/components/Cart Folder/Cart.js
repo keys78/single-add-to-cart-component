@@ -11,7 +11,7 @@ const Cart = ({ modalRef, open }) => {
 
 
     return (
-        <CartModal
+        <CartModal className="animate__animated animate__slideInDown animate__faster"
             ref={modalRef} style={{ display: open ? "block" : "none", }}
         >
             <CartHeader>Cart</CartHeader>

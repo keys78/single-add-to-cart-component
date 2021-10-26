@@ -5,12 +5,18 @@ import styled from 'styled-components';
 
 const LightBoxImages = ({ product, i }) => {
     const [activeSlide, setActiveSlide] = useState(product.images.imgProduct_1)
-
+    const options = {
+        buttons: {
+            backgroundColor: "#ffffff",
+            iconColor: 'black',
+            width:'100vw'
+          },
+    }
 
     return (
         <div>
 
-            <SRLWrapper>
+            <SRLWrapper options={options}>
                 <DisplayImage src={activeSlide} alt={product.images.alt} />
                 <ThumbNailsHolder>
                     <ThumbNails onClick={() => { setActiveSlide(product.images.imgProduct_1) }} src={product.images.imgProduct_1} alt={product.images.alt} />
@@ -51,7 +57,7 @@ const DisplayImage = styled.img`
     border-radius: 10px;
 
     @media (max-width: 640px) {
-        width: 100%;
+        width: 100vw;
         border-radius: 0px;
         height: 50vh;
   }
