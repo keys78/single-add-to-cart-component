@@ -18,7 +18,7 @@ const SideBar = ({ openSideBar, setOpenSideBar}) => {
         <SideBarModal className="animate__animated animate__zoomIn animate__faster">
         <SideBarContainer className="animate__animated animate__slideInDown animate__faster">
             <div className="py-10" onClick={() => setOpenSideBar(!openSideBar)}>
-                <img src='images/icon-close.svg' />
+                <img className="cursor-pointer" src='images/icon-close.svg' />
             </div>
             <div>{ renderNavLinks }</div>
         </SideBarContainer>
@@ -32,6 +32,11 @@ const SideBarModal =  styled.section`
     position: fixed;
     top:0;
     height: 100vh;
+
+    @media (min-width:1024px) {
+        display: none;
+  }
+
 `
 const SideBarContainer =  styled.section`
     background-color: var(--neutral);

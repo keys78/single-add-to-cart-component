@@ -5,18 +5,12 @@ import styled from 'styled-components';
 
 const LightBoxImages = ({ product, i }) => {
     const [activeSlide, setActiveSlide] = useState(product.images.imgProduct_1)
-    const options = {
-        buttons: {
-            backgroundColor: "#ffffff",
-            iconColor: 'black',
-            width:'100vw'
-          },
-    }
+
 
     return (
         <div>
 
-            <SRLWrapper options={options}>
+            <SRLWrapper>
                 <DisplayImage src={activeSlide} alt={product.images.alt} />
                 <ThumbNailsHolder>
                     <ThumbNails onClick={() => { setActiveSlide(product.images.imgProduct_1) }} src={product.images.imgProduct_1} alt={product.images.alt} />

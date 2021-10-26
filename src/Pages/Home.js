@@ -1,16 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Cart from '../components/Cart Folder/Cart'
-import ImageLightBox from '../components/ImageLightBox'
+import ProductsDisplay from '../components/ProductsDisplay'
 import NavBar from '../components/NavCenter/NavBar'
-// import ClickOutsideComponent from '../CustomHooks/ClickOutsideComponent'
 
 const Home = () => {
     return (
         <HomeContainer>
            <NavBar />
-           {/* <ClickOutsideComponent /> */}
-           <ImageLightBox />
+           <ProductsDisplay />
         </HomeContainer>
     )
 }

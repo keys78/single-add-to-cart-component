@@ -9235,6 +9235,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-lightbox-pack@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-lightbox-pack/-/react-lightbox-pack-0.1.5.tgz#1f7d8c33db9657076ea73be9a0bbec9c920bd333"
+  integrity sha512-kAtTwjRbZ/gHB8DDpPrJ8dncrbCEl7gjUvI7S7XqxHSFnSwVLENtncqQhjk1IWBDwMWjraY0BMCVqKgkKLpk8A==
+
 react-redux@^7.2.5:
   version "7.2.5"
   resolved "https://registry.npmjs.org/react-redux/-/react-redux-7.2.5.tgz"

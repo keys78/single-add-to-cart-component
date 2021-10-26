@@ -6,7 +6,7 @@ import LightBoxImages from './LightBoxImages';
 import styled from 'styled-components';
 
 
-const ImageLightBox = () => {
+const ProductsDisplay = () => {
     const [quantity, setQuantity] = useState(0)
     const storeProducts = useSelector((state) => state.products);
     const dispatch = useDispatch()
@@ -171,4 +171,4 @@ const PanelContainer = styled.div`
   }
 `
 
-export default ImageLightBox
+export default ProductsDisplay

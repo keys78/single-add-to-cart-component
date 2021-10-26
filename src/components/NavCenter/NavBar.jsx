@@ -108,8 +108,10 @@ const Counter = styled.span`
 
 `
 const Hamburger = styled.img`
+     cursor: pointer;
     @media (min-width: 1024px) {
        display: none;
+       cursor: pointer;
   }
 `
 
