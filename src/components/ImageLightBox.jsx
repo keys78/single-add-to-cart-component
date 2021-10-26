@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 
 const ImageLightBox = () => {
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(0)
     const storeProducts = useSelector((state) => state.products);
     const dispatch = useDispatch()
 
@@ -23,18 +23,21 @@ const ImageLightBox = () => {
 
                 <div>
                     <div className="flex gap-5 items-center">
-                        <ProductPrice>{'$'}{product.price.toLocaleString(undefined, {minimumFractionDigits: 2})}</ProductPrice>
+                        <ProductPrice>{'$'}{product.price}{'.00'}</ProductPrice>
                         <DiscountPercentage>{product.discountPercentage}</DiscountPercentage>
                     </div>
-                    <OriginalPrice>{'$'}{product.discountPrice.toLocaleString(undefined, {minimumFractionDigits: 2})}</OriginalPrice>
+                    <OriginalPrice>{'$'}{product.discountPrice}{'.00'}</OriginalPrice>
                 </div>
-
-
-
 
                 <PanelContainer>
                     <QuantityButton quantity={quantity} setQuantity={setQuantity} />
-                    <AddToCartBtn onClick={() => { dispatch(addItemToCart({ product, quantity })) }} >
+                    <AddToCartBtn onClick={() => { 
+                        if(quantity <= 0) {
+                            alert('Please Select Item Quantity')
+                        } else
+                        dispatch(addItemToCart({ product, quantity }))
+                        }} >
+
                         <span><img src='images/icon-cart-white.svg' /></span>
                         <span>{product.cartStatus}</span>
                     </AddToCartBtn>
@@ -58,11 +61,37 @@ const ItemDisplayContainer = styled.section`
     justify-content: space-between;
     align-items: center;
     padding-top:70px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+  }
+    @media (max-width: 640px) {
+        width: 100%;
+        padding-top:0px;
+  }
+
+  
 `
 
 const DetailsArea = styled.div`
     margin-left: 10rem;
     margin-top: -2rem;
+
+    @media (max-width: 1024px) {
+        margin-left: 2rem;
+  }
+
+    @media (max-width: 1024px) {
+        margin-left: 2rem;
+        margin-top: 2rem;
+  }
+
+    @media (max-width: 640px) {
+        margin-left: 0rem;
+        padding:0 30px;
+        
+  }
+    
     
 `
 
@@ -123,6 +152,11 @@ const AddToCartBtn = styled.div`
         opacity: 0.6;
         transition: 0.5s;
     }
+
+    @media (max-width: 640px) {
+        width: 100%;
+        margin-bottom: 4rem;
+  }
     
 `
 const PanelContainer = styled.div`
@@ -130,6 +164,11 @@ const PanelContainer = styled.div`
     align-items: center;
     gap:9rem;
     margin-top:2rem;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      gap:1rem;
+  }
 `
 
 export default ImageLightBox

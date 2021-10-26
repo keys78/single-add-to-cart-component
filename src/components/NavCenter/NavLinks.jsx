@@ -18,7 +18,7 @@ const NavLinks = () => {
     return (
         <NavLinksHolder>
             <NavLink to="/">
-                <img className="mr-10" src='images/logo.svg' alt="logo" />
+                <ImageLogo className="sm:mr-10 mr-0 " src='images/logo.svg' alt="logo" />
             </NavLink>
             {renderNavLinks}
         </NavLinksHolder>
@@ -28,6 +28,9 @@ const NavLinks = () => {
 const NavLinksHolder = styled.div`
     display: flex;
     gap: 40px;
+    @media (max-width: 540px) {
+        gap: 0px;
+  }
 `
 const Navs = styled.p`
     border-bottom: 4px solid transparent;
@@ -41,7 +44,15 @@ const Navs = styled.p`
         transition: 0.2s;
         color: var(--veryDarkBlue);
     }
+
+    @media (max-width: 1024px) {
+        display: none;
+  }
     
 `
+
+  const ImageLogo = styled.img`
+    max-width: 100%;
+  `
 
 export default NavLinks

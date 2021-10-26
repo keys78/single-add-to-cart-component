@@ -33,14 +33,42 @@ const Cart = ({ modalRef, open }) => {
 }
 
 const CartModal = styled.div`
-    box-shadow: 1px 6px 7px 4px rgba(101,101,101,0.13);
+     box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
     width: 350px;
     padding:10px 0;
     position:absolute;
     top:5rem;
     right:9.6rem;
     background-color: var(--neutral);
+    border-radius: 10px;
+
+    @media (max-width: 640px) {
+        width:100%;
+        margin:auto;
+        right:0rem;
+  }
 `
+
+// border-radius: 10px;
+//     float:right;
+//     margin-top: 5rem;
+//     z-index: 999;
+//     background:#fff;
+//     padding: 2rem 1.75rem;
+//     width: 100%;
+//     max-width: 23.5rem;
+//     box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+//               0 2px 2px rgba(0,0,0,0.12), 
+//               0 4px 4px rgba(0,0,0,0.12), 
+//               0 8px 8px rgba(0,0,0,0.12),
+//               0 16px 16px rgba(0,0,0,0.12);
+
+//     color: black;
+
 const CartHeader = styled.h1`
     font-weight: 700;
     font-size: 16px;

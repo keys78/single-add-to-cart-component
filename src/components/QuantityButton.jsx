@@ -34,6 +34,10 @@ const QuantityControlPanel = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    @media (max-width: 640px) {
+        width: 100%;
+  }
 `
 const QuantityCount = styled.span`
      font-weight: 700;

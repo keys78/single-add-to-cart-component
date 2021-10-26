@@ -18,6 +18,13 @@ const Home = () => {
 const HomeContainer = styled.section`
     width: 80%;
     margin: auto;
+
+    @media (max-width: 1280px) {
+    width: 90%;
+  }
+    @media (max-width: 640px) {
+    width: 100%;
+  }
 `
 
 export default Home

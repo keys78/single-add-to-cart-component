@@ -39,12 +39,24 @@ const ThumbNailsHolder = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 640px) {
+        display: none;
+  }
 `
 
 const DisplayImage = styled.img`
     width: 60rem;
     cursor: pointer;
     border-radius: 10px;
+
+    @media (max-width: 640px) {
+        width: 100%;
+        border-radius: 0px;
+        height: 50vh;
+  }
+
+    
 `
 
 export default LightBoxImages

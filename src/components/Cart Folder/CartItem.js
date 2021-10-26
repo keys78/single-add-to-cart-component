@@ -16,11 +16,11 @@ const CartItem = ({ cartItem, i }) => {
                 <CartThumbNail src={cartItem.cartImage} alt="cartImage" />
                 <div>
                     <h1 className="text-sm text-gray-500">{cartProduct.name}</h1>
-                    <span className="text-sm pr-1 text-gray-500">{'$'}{cartProduct.price}</span>
-                    <span className="text-sm pr-1 text-gray-500">x {cartItem.quantity}</span>
-                    <span className="font-bold text-sm">{'$'}{totalPrice}</span>
+                    <span className="text-sm pr-1 text-gray-500">{'$'}{cartProduct.price}{'.00'}</span>
+                    <span className="text-sm pr-3 text-gray-500">x {cartItem.quantity}</span>
+                    <span className="font-bold text-sm">{'$'}{totalPrice}{'.00'}</span>
                 </div>
-                <div onClick={() => dispatch(removeItemFromCart({ cartItemId: cartItem.id }))}>
+                <div className="cursor-pointer" onClick={() => dispatch(removeItemFromCart({ cartItemId: cartItem.id }))}>
                     <img src='images/icon-delete.svg' />
                 </div>
             </div>
