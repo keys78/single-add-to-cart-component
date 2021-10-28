@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const AboutMe = ({ modalAboutMeRef, openAbout }) => {
+const AboutMe = ({ openAbout }) => {
 
     return (
-        <div ref={modalAboutMeRef} style={{ display: openAbout ? "block" : "none", }}
+        openAbout && <div style={{ display: openAbout ? "block" : "none", }}
             className="w-full h-screen fixed top-0 left-0 bg-gray-100 py-32 animate__animated animate__zoomIn animate__faster">
             <div className="w-6/12 mx-auto">
                 <Avatar src="images/AvatarMaker.png" />
@@ -14,6 +14,7 @@ const AboutMe = ({ modalAboutMeRef, openAbout }) => {
                 <h1><a className="text-3xl text-yellow-600 text-center" href="https://www.linkedin.com/in/tochi-emma-904b71220/">LinkedIn {' '}&#8594;</a></h1>
             </div>
         </div>
+    
     )
 }
 

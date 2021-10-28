@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import { getCartItems } from '../../Redux/cartSlice'
 import Cart from '../Cart Folder/Cart'
-import useClickOutside from '../../CustomHooks/useClickOutside'
 import AboutMe from '../AboutMe'
 import SideBar from './SideBar'
 
@@ -13,18 +12,6 @@ const NavBar = () => {
     const [open, setOpen] = useState(false)
     const [openAbout, setOpenAbout] = useState(false)
     const [openSideBar, setOpenSideBar] = useState(false)
-
-    const modalRef = useRef()
-    const modalAboutMeRef = useRef()
-
-    useClickOutside(modalRef, () => {
-        if (open) setOpen(false)
-    })
-
-    useClickOutside(modalRef, () => {
-        if (openAbout) setOpenAbout(!openAbout)
-    })
-
 
 
     const cartItems = useSelector(getCartItems)
@@ -37,19 +24,19 @@ const NavBar = () => {
                 </div>
 
                 <div className='flex lg:-mt-10 -mt-0 sm:gap-20 gap-0 items-center'>
-                    <div className="relative" onClick={() => setOpen(true)}>
+                    <div className="relative" onClick={() => setOpen(!open)}>
                         <ImgCart src='images/icon-cart.svg' />
                         <Counter>{cartItems.length}</Counter>
                     </div>
 
-                    <Avatar onClick={() => setOpenAbout(!open)} src='images/AvatarMaker.png' />
+                    <Avatar onClick={() => setOpenAbout(!openAbout)} src='images/AvatarMaker.png' />
                 </div>
 
             </NavBarContainer>
 
 
-            <Cart modalRef={modalRef} open={open} />
-            <AboutMe modalAboutMeRef={modalAboutMeRef} openAbout={openAbout} />
+            <Cart open={open} />
+            <AboutMe setOpenAbout={setOpenAbout} openAbout={openAbout} />
             {openSideBar && <SideBar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar}/>}
         </div>
     )

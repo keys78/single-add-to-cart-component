@@ -6,13 +6,13 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 
-const Cart = ({ modalRef, open }) => {
+const Cart = ({ open }) => {
     const cartItems = useSelector(getCartItems)
 
 
     return (
         <CartModal className="animate__animated animate__slideInDown animate__faster"
-            ref={modalRef} style={{ display: open ? "block" : "none", }}
+            style={{ display: open ? "block" : "none", }}
         >
             <CartHeader>Cart</CartHeader>
             <DivisorLine />
